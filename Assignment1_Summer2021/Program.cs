@@ -10,11 +10,11 @@ namespace Assignment1_Summer2021
         static void Main(string[] args)
         {
             //Question 1
-            Console.WriteLine("Q1 : Enter the Moves of Robot:");
-            string moves = Console.ReadLine();
-            var p = new Program();
+            Console.WriteLine("Q1 : Enter the Moves of Robot:");   
+            string moves = Console.ReadLine(); //storing the input in moves
+            var p = new Program(); 
             
-            bool pos = p.JudgeCircle(moves);
+            bool pos = p.JudgeCircle(moves); //Calling the function
             if (pos)
             {
                 Console.WriteLine("The Robot return’s to initial Position (0,0)");
@@ -28,9 +28,9 @@ namespace Assignment1_Summer2021
 
             //Question 2:
             Console.WriteLine(" Q2 : Enter the string to check for pangram:");
-            string s = Console.ReadLine();
-            bool flag = p.CheckIfPangram(s);
-            if (flag)
+            string s = Console.ReadLine(); //reading the string for input
+            bool flag = p.CheckIfPangram(s); //Calling the function
+            if (flag) //checking both conditions 
             {
                 Console.WriteLine("Yes, the given string is a pangram");
             }
@@ -42,17 +42,17 @@ namespace Assignment1_Summer2021
 
             //Question 3:
 
-            int[] arr = { 1, 2, 3, 1, 1, 3 };
-            int gp = p.NumIdenticalPairs(arr);
+            int[] arr = { 1, 2, 3, 1, 1, 3 }; // using pre-defined input 
+            int gp = p.NumIdenticalPairs(arr); //Calling the function
             Console.WriteLine("Q3:");
-            Console.WriteLine("The number of IdenticalPairs in the array are {0}:", gp);
+            Console.WriteLine("The number of IdenticalPairs in the array are {0}:", gp); //displaying the output 
 
             //Question 4:
-            int[] arr1 = { 3, 1, 4, 1, 5 };
+            int[] arr1 = { 3, 1, 4, 1, 5 }; // using pre-defined input 
             Console.WriteLine("Q4:");
-            int pivot = p.PivotIndex(arr1);
+            int pivot = p.PivotIndex(arr1); //Calling the function
 
-            if (pivot > 0)
+            if (pivot > 0) //checking both conditions for pivot index
             {
                 Console.WriteLine("The Pivot index for the given array is {0}", pivot);
             }
@@ -88,7 +88,7 @@ namespace Assignment1_Summer2021
                 int count_U = 0;
                 int count_D = 0;
 
-                for (int i = 0; i < moves.Length; i++)
+                for (int i = 0; i < moves.Length; i++)//counting total L,R,U,D moves
                 {
                     if (moves[i] == ('L'))
                         count_L = count_L + 1;
@@ -100,7 +100,7 @@ namespace Assignment1_Summer2021
                         count_R = count_R + 1;
                 }
 
-                if ((count_L == count_R) && (count_U == count_D))
+                if ((count_L == count_R) && (count_U == count_D))//checking for equal L,R & U,D moves 
                 {
                     return true;
                 }
